@@ -94,31 +94,30 @@ Example Usage
 Add a New Product
 - Endpoint: POST /products
 - Request Body:
-  ```bash{
+  ```bash
+  {
   "product_name": "Sample Product",
   "product_description": "A sample product description",
   "product_price": 100.0,
-  "product_images": ["http://example.com/image1.jpg"]
-}
+  "product_images": ["http://example.com/image1.jpg"]}
+
 - Expected Response:
-  ```bash{
+  ```bash
+  {
   "message": "Product created successfully",
-  "product_id": 1
-}
-``
+  "product_id": 1}
 Fetch a Product
 - Endpoint: GET /products/1
 - Expected Response:
-  ```bash{
+  ```bash
+  {
   "id": 1,
   "user_id": 1,
   "product_name": "Sample Product",
   "product_description": "A sample product description",
   "product_images": ["http://example.com/image1.jpg"],
   "compressed_product_images": ["http://example.com/image1-compressed.jpg"],
-  "product_price": 100.0
-}
-``
+  "product_price": 100.0}
 
 Deployment Notes
 1. Ensure all environment variables (e.g., database credentials, Redis URL, RabbitMQ URL) are correctly set in the docker-compose.yml file.
