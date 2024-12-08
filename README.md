@@ -54,23 +54,27 @@ Copy code
 docker-compose up --build
 
 3. Access the API:
+```bash
 Base URL: http://localhost:8080
-
+```
 API Endpoints
 Products
+```bash
 GET /products/{id}: Fetch product details by ID (with Redis caching).
 POST /products: Create a new product.
 PUT /products/{id}: Update an existing product.
 DELETE /products/{id}: Delete a product and invalidate its cache.
+```
 Image Processing
 Automatically processes product images and compresses them.
 
 Configuration
 Database
+```bash
 -POSTGRES_USER: Postgres
--POSTGRES_PASSWORD: Comrade#11
+-POSTGRES_PASSWORD: <yourpassword>
 -POSTGRES_DB: product_management
-
+```
 Redis
 - Configured to run on default port 6379.
 RabbitMQ
