@@ -76,13 +76,14 @@ Database
 -POSTGRES_DB: product_management
 ```
 Redis
+```bash
 - Configured to run on default port 6379.
 RabbitMQ
 - Accessible via localhost:5672.
-
+```
 Assumptions
 1. Product IDs are unique and auto-incremented.
-2 . All endpoints are tested locally on http://localhost:8080.
+2. All endpoints are tested locally on http://localhost:8080.
 3. Redis cache expiration is set to 10 minutes.
    
 Testing
@@ -93,22 +94,22 @@ Example Usage
 Add a New Product
 - Endpoint: POST /products
 - Request Body:
-  {
+  ```bash{
   "product_name": "Sample Product",
   "product_description": "A sample product description",
   "product_price": 100.0,
   "product_images": ["http://example.com/image1.jpg"]
 }
 - Expected Response:
-  {
+  ```bash{
   "message": "Product created successfully",
   "product_id": 1
 }
-
+``
 Fetch a Product
 - Endpoint: GET /products/1
 - Expected Response:
-  {
+  ```bash{
   "id": 1,
   "user_id": 1,
   "product_name": "Sample Product",
@@ -117,6 +118,7 @@ Fetch a Product
   "compressed_product_images": ["http://example.com/image1-compressed.jpg"],
   "product_price": 100.0
 }
+``
 
 Deployment Notes
 1. Ensure all environment variables (e.g., database credentials, Redis URL, RabbitMQ URL) are correctly set in the docker-compose.yml file.
